@@ -1,3 +1,5 @@
 module github.com/nelsongp/twittor
 
-require()
+go 1.14
+
+requires()
