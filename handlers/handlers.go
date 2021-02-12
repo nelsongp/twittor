@@ -3,6 +3,7 @@ package handlers
 import (
 	"github.com/gorilla/mux"
 	"github.com/nelsongp/twittor/middlew"
+	"github.com/nelsongp/twittor/routers"
 	"github.com/rs/cors"
 	"log"
 	"net/http"
