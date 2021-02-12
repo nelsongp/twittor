@@ -13,7 +13,6 @@ import (
 /*Manejadores seteo mi puerto y el handler y pongo a escuchar mi server*/
 func Manejadores() {
 	router := mux.NewRouter()
-
 	router.HandleFunc("/registro", middlew.ChequeoBD(routers.Registro)).Methods("POST")
 
 	PORT := os.Getenv("PORT")
