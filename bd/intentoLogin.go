@@ -6,7 +6,7 @@ import (
 )
 
 /*IntentoLogin realizael chequeo de login de la BD*/
-func IntentoLogin(email string, password string)(models.Usuario, bool){
+func IntentoLogin(email string, password string) (models.Usuario, bool) {
 	usu, encontrado, _ := ChequeoYaExisteUsuario(email)
 	if !encontrado {
 		return usu, false

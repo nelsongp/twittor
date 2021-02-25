@@ -10,7 +10,7 @@ import (
 )
 
 /*BuscoPerfil busca perfil en la BD*/
-func BuscoPerfil(ID string)(models.Usuario, error){
+func BuscoPerfil(ID string) (models.Usuario, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*15)
 	defer cancel()
 
@@ -24,7 +24,7 @@ func BuscoPerfil(ID string)(models.Usuario, error){
 		"_id": objID,
 	}
 
-	err:=col.FindOne(ctx, condicion).Decode(&perfil)
+	err := col.FindOne(ctx, condicion).Decode(&perfil)
 	perfil.Password = ""
 	if err != nil {
 		fmt.Println("Registro no encontrado" + err.Error())

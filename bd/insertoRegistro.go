@@ -8,7 +8,7 @@ import (
 )
 
 /*InsertoRegistro es la parada final coin la BD para insertar los datos del usuario */
-func InsertoRegistro (u models.Usuario)(string, bool, error){
+func InsertoRegistro(u models.Usuario) (string, bool, error) {
 
 	//el contexto de background es el que seguimos jalando desde el de base de datos
 	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)

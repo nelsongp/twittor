@@ -13,7 +13,7 @@ var MongoCN = ConectarBD()
 var clientOptions = options.Client().ApplyURI("mongodb+srv://twittor:P3r5s1a8191@cluster0-ruzay.mongodb.net/twittor?retryWrites=true&w=majority")
 
 //ConectarBD los contextos son espacios en memoria donde yo voy a compartir cosas y comunicar informacion entre ejecuciones
-func ConectarBD() *mongo.Client{
+func ConectarBD() *mongo.Client {
 	//Hacemos conexion a la base y verificamos la conexion
 	client, err := mongo.Connect(context.TODO(), clientOptions)
 

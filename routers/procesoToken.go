@@ -7,13 +7,15 @@ import (
 	"github.com/nelsongp/twittor/models"
 	"strings"
 )
+
 /* Email del usuario evaluado*/
 var Email string
+
 /*IDUsuario es el ID devuelto del modelo, que se usara en todos los endpoints*/
 var IDUsuario string
 
 /*ProcesoToken proceso token para extraer sus valores*/
-func ProcesoToken(tk string)(*models.Claim, bool, string, error){
+func ProcesoToken(tk string) (*models.Claim, bool, string, error) {
 	miClave := []byte("MastersdelDesarrollo_grupodeFacebook")
 	claims := &models.Claim{}
 

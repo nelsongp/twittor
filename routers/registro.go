@@ -8,7 +8,7 @@ import (
 )
 
 /*Registro es la funcion para crear usuario en base de datos*/
-func Registro(w http.ResponseWriter, r *http.Request){
+func Registro(w http.ResponseWriter, r *http.Request) {
 	var t models.Usuario
 	//leemos el body del request, pero el body es un objeto de solo lectura que se destruye una vez leido
 	err := json.NewDecoder(r.Body).Decode(&t)
@@ -18,7 +18,7 @@ func Registro(w http.ResponseWriter, r *http.Request){
 		return
 	}
 
-	if len(t.Email) == 0{
+	if len(t.Email) == 0 {
 		http.Error(w, "El email del usuario es requerido", 400)
 		return
 	}
@@ -35,7 +35,7 @@ func Registro(w http.ResponseWriter, r *http.Request){
 	}
 
 	_, status, err := bd.InsertoRegistro(t)
-	if err != nil{
+	if err != nil {
 		http.Error(w, "Ocurrio un error al registrar usuario"+err.Error(), 400)
 		return
 	}

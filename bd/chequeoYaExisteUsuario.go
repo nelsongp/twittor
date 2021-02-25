@@ -8,14 +8,14 @@ import (
 )
 
 /*ChequeoYaExisteUsuario recibe el email y valida si existe el usuario*/
-func ChequeoYaExisteUsuario(email string)(models.Usuario, bool, string){
+func ChequeoYaExisteUsuario(email string) (models.Usuario, bool, string) {
 	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 	defer cancel()
 
 	db := MongoCN.Database("twittor")
 	col := db.Collection("usuarios")
 
-	condicion := bson.M{"email":email}
+	condicion := bson.M{"email": email}
 
 	var resultado models.Usuario
 
